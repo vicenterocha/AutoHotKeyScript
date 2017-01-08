@@ -4,7 +4,7 @@ AutoHotKey script. Used in Windows 10
 
 - SetCapsLockState is AlwaysOff
 
-# Windows Management
+# Windows Management and Explorer related tasks
  - alt + F4
   - caps + q
  - ctrl + F4
@@ -17,6 +17,9 @@ AutoHotKey script. Used in Windows 10
   - caps + [
  - move up a folder in Explorer
   - `
+ - Open cmd on current Explorer folder
+  - windows + c
+  
 # Arrows
  - mapped with capslock +
   - h left
@@ -42,6 +45,3 @@ AutoHotKey script. Used in Windows 10
     - shift + windows + s
   - search selected text
     - shift + windows + c
-  
-# Open cmd on current Explorer folder
-  
