@@ -45,3 +45,11 @@ AutoHotKey script. Used in Windows 10
     - shift + windows + s
   - search selected text
     - shift + windows + c
+
+# Media keys (not yet updated)
+ - Previous Song
+  - caps + 1
+ - Pause/Play
+  - caps + 2
+ - Next Song
+  - caps + 3
