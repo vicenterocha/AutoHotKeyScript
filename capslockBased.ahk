@@ -1,8 +1,11 @@
-#NoTrayIcon
+﻿#NoTrayIcon
 
 SetCapsLockState, AlwaysOff
 
-; Windows Management
+; ------------------------
+;	Windows Management
+; ------------------------
+
 CapsLock & q::Send !{F4}
 CapsLock & w::Send ^{F4}
 ^+SPACE::  Winset, Alwaysontop, , A 	;set windows allways on top
@@ -12,11 +15,15 @@ CapsLock & [::Send #^{Left}
 
 ; Press ~ to move up a folder in Explorer
 #IfWinActive, ahk_class CabinetWClass
-`::Send !{Up} 
+`::Send !{Up}
 #IfWinActive
 return
 
-; ARROWS
+
+
+; ------------------------
+;			Arrows
+; ------------------------
 Capslock & j::Send {Blind}{Down DownTemp}
 Capslock & j up::Send {Blind}{Down Up}
 Capslock & k::Send {Blind}{Up DownTemp}
@@ -26,30 +33,42 @@ Capslock & h up::Send {Blind}{Left Up}
 Capslock & l::Send {Blind}{Right DownTemp}
 Capslock & l up::Send {Blind}{Right Up}
 
-; Scrolls
+
+; ------------------------
+;		Scrolls
+; ------------------------
+
 CapsLock & i::Send {PgUp}
 CapsLock & o::Send {PgDn}
 CapsLock & u::Send {Home}
 CapsLock & p::Send {End}
 
-; TextEdit
+
+; ------------------------
+;		Text Edit
+; ------------------------
 Capslock & y::Send {Blind}{Backspace DownTemp}
 Capslock & y up::Send {Blind}{Backspace Up}
 Capslock & m::Send {Blind}{Del DownTemp}
 Capslock & m up::Send {Blind}{Del Up}
 
-; Windows search
+
+; ------------------------
+;		Search
+; ------------------------
+
+	; Windows
 ;Capslock & Insert :: Send documents:
 
 #+s::
     {
 	Send, #s
 	;Sleep 50
-	SendInput, documents: 
+	SendInput, documents:
 	Return
     }
 
-;Search Google from any app
+	; Search Google from any app
 #+c::
     {
 	Send, ^c
@@ -58,22 +77,20 @@ Capslock & m up::Send {Blind}{Del Up}
 	Return
     }
 
-; Custom volume buttons
-CapsLock & NumpadAdd:: Send {Volume_Up} ;shift + numpad plus
-NumpadAdd & NumpadSub:: Send {Volume_Down} ;shift + numpad minus
-;break::Send {Volume_Mute} ; Break key mutes
-return
+; ------------------------
+;		Open CMD from Explorer on current folder
+; ------------------------
 
 #C::
 {
     Send !D
     Send CMD
-    Send {Enter}    
+    Send {Enter}
     return
 }
 
 ; ------------------------
-; 			Skype (not active)
+; 			Skype
 ; ------------------------
 
 ConversationUp()
@@ -98,3 +115,65 @@ ConversationDown()
 
 ;Ctrl+Up move one conversation up
 ;^Up::ConversationUp()
+
+; ------------------------
+; 		Media Keys
+; ------------------------
+
+	; Next song
+Capslock & 1::Send {Blind}{Media_Prev DownTemp}
+Capslock & 1 up::Send {Blind}{Media_Prev Up}
+
+	; Play/Pause
+Capslock & 2::Send {Blind}{Media_Play_Pause DownTemp}
+Capslock & 2 up::Send {Blind}{Media_Play_Pause Up}
+
+	; Previous Song
+Capslock & 3::Send {Blind}{Media_Next DownTemp}
+Capslock & 3 up::Send {Blind}{Media_Next Up}
+
+
+	; Mute
+Capslock & F1::Send {Volume_Mute}
+
+	; Volume Down
+Capslock & F2::Send {Volume_Down}
+
+	; Volume Up
+Capslock & F3::Send {Volume_Up}
+
+
+; ------------------------
+; 		Multikeypress
+; ------------------------
+
+
+; Keypress detection for Capslock.
+Capslock::
+if counter >= 0 ; setTimer already started, so we log the keypress instead
+{
+	counter++
+	return
+}
+counter = 0 ; Start setTimer and set the number of logged keypresses to 0
+setTimer,keyWinC, 400
+return
+
+keyWinC:
+setTimer,keyWinC,off
+if counter = 0 ; The key is pressed once
+{
+
+}
+if counter = 1 ; The key is pressed twice
+{
+	SetCapsLockState, AlwaysOn
+
+}
+if counter = 2 ; The key is pressed thrice
+{
+	SetCapsLockState, AlwaysOff
+
+}
+counter = -1
+return
