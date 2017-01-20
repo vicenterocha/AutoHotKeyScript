@@ -46,10 +46,16 @@ AutoHotKey script. Used in Windows 10
   - search selected text
     - shift + windows + c
 
-## Media keys (not yet updated)
+## Media keys
  - Previous Song
   - caps + 1
  - Pause/Play
   - caps + 2
  - Next Song
   - caps + 3
+ - Mute
+  - caps + F1
+ - Volume Down
+  - caps + F2
+ - Volume Up
+  - caps + F3
