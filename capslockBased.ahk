@@ -43,12 +43,14 @@ Capslock & Tab::Send {Esc}
 ;		Scrolls
 ; ------------------------
 
-CapsLock & i::Send {PgUp}
 CapsLock & o::Send {PgDn}
+CapsLock & i::Send {PgUp}
 
 Capslock & u::
 If GetKeyState("Shift","p")
  Send +{Home}
+else if GetKeyState("Control","p")
+ Send ^{Home}
 else
  Send {Home}
 Return
@@ -56,6 +58,8 @@ Return
 Capslock & p::
 If GetKeyState("Shift","p")
  Send +{End}
+else if GetKeyState("Control","p")
+ Send ^{End}
 else
  Send {End}
 Return
