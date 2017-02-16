@@ -1,14 +1,17 @@
-﻿#NoTrayIcon
+#NoTrayIcon
 
 SetCapsLockState, AlwaysOff
+;capsMode = 1
+
 
 ; ------------------------
 ;	Windows Management
 ; ------------------------
 
+
 CapsLock & q::Send !{F4}
 CapsLock & w::Send ^{F4}
-^+SPACE::  Winset, Alwaysontop, , A 	;set windows allways on top
+;^+SPACE::  Winset, Alwaysontop, , A 	;set windows allways on top
 CapsLock & ]::Send #^{Right}
 CapsLock & [::Send #^{Left}
 
@@ -34,15 +37,28 @@ Capslock & l::Send {Blind}{Right DownTemp}
 Capslock & l up::Send {Blind}{Right Up}
 
 
+Capslock & Tab::Send {Esc}
+
 ; ------------------------
 ;		Scrolls
 ; ------------------------
 
 CapsLock & i::Send {PgUp}
 CapsLock & o::Send {PgDn}
-CapsLock & u::Send {Home}
-CapsLock & p::Send {End}
 
+Capslock & u::
+If GetKeyState("Shift","p")
+ Send +{Home}
+else
+ Send {Home}
+Return
+
+Capslock & p::
+If GetKeyState("Shift","p")
+ Send +{End}
+else
+ Send {End}
+Return
 
 ; ------------------------
 ;		Text Edit
@@ -149,31 +165,46 @@ Capslock & F3::Send {Volume_Up}
 
 
 ; Keypress detection for Capslock.
-Capslock::
-if counter >= 0 ; setTimer already started, so we log the keypress instead
-{
-	counter++
-	return
-}
-counter = 0 ; Start setTimer and set the number of logged keypresses to 0
-setTimer,keyWinC, 400
-return
+;Capslock::
+;if counter >= 0 ; setTimer already started, so we log the keypress instead
+;{
+;	counter++
+;	return
+;}
+;counter = 0 ; Start setTimer and set the number of logged keypresses to 0
+;setTimer,keyWinC, 400
+;return
 
-keyWinC:
-setTimer,keyWinC,off
-if counter = 0 ; The key is pressed once
-{
+;keyWinC:
+;setTimer,keyWinC,off
+;if counter = 0 ; The key is pressed once
+;{
 
-}
-if counter = 1 ; The key is pressed twice
-{
-	SetCapsLockState, AlwaysOn
+;}
+;if counter = 1 ; The key is pressed twice
+;{
+;	global capsMode = 11
+	;Send {Esc}
+	;SetCapsLockState, AlwaysOn
 
-}
-if counter = 2 ; The key is pressed thrice
-{
-	SetCapsLockState, AlwaysOff
+;}
+;if counter = 2 ; The key is pressed thrice
+;{
+;	global capsMode = 1
+;	Send d
+	;SetCapsLockState, AlwaysOff
 
-}
-counter = -1
+;}
+;counter = -1
+;return
+
+
+; ------------------------
+; 		Chrome
+; ------------------------
+
+; ignore ctrl+w in chrome
+#IfWinActive, ahk_class Chrome_WidgetWin_1
+^w::return
+#IfWinActive
 return
