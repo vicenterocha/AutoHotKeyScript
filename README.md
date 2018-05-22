@@ -1,5 +1,5 @@
 # AutoHotKeyScript
-AutoHotKey script. Used in Windows 10
+AutoHotKey script. -Used in Windows 10- (Moved to Arch with i3wm)
 
 
 - SetCapsLockState is AlwaysOff
