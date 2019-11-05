@@ -6,19 +6,19 @@ AutoHotKey script. ~Used in Windows 10~ (Moved to Arch with i3wm)
 
 ## Windows Management and Explorer related tasks
  - alt + F4
-  - caps + q
+ -- caps + q
  - ctrl + F4
-  - caps + w
+ -- caps + w
  - windows always on top
-  - ctrl + shift + space
+ -- ctrl + shift + space
  - navigate to right desktop
-  - caps + ]
+ -- caps + ]
  - navigate to left desktop
-  - caps + [
+ -- caps + [
  - move up a folder in Explorer
-  - `
+ -- `
  - Open cmd on current Explorer folder
-  - windows + c
+ -- windows + c
   
 ## Arrows
  - mapped with capslock +
