@@ -5,57 +5,42 @@ AutoHotKey script. ~Used in Windows 10~ (Moved to Arch with i3wm)
 - SetCapsLockState is AlwaysOff
 
 ## Windows Management and Explorer related tasks
- * alt + F4
-     * caps + q
- - ctrl + F4
- -- caps + w
- - windows always on top
- -- ctrl + shift + space
- - navigate to right desktop
- -- caps + ]
- - navigate to left desktop
- -- caps + [
- - move up a folder in Explorer
- -- `
- - Open cmd on current Explorer folder
- -- windows + c
-  
+ * caps + q -> alt + F4
+ * caps + w -> ctrl + F4
+ * ctrl + shift + space -> windows always on top
+ * caps + ] -> navigate to right desktop
+ caps + [ -> navigate to left desktop
+ * ` -> move up a folder in Explorer
+ * windows + c -> Open cmd on current Explorer folder
+   
 ## Arrows
  - mapped with capslock +
-  - h left
-  - j down
-  - k up
-  - l right
+     - h -> left
+     - j -> down
+     - k -> up
+     - l -> right
   
 ## Scrolls
  - mapped with capslock +
-  - u Home
-  - i PageUp
-  - o PageDown
-  - p End
+     - u -> Home
+     - i -> PageUp
+     - o -> PageDown
+     - p -> End
 
 ## Text Edit
  - mapped with capslock +
-  - y Backspace
-  - m delete
+     - y -> Backspace
+     - m -> delete
   
 
 ## Windows search
-  - search documents content
-    - shift + windows + s
-  - search selected text
-    - shift + windows + c
+  - shift + windows + s -> search documents content 
+  - shift + windows + c -> search selected text 
 
 ## Media keys
- - Previous Song
-  - caps + 1
- - Pause/Play
-  - caps + 2
- - Next Song
-  - caps + 3
- - Mute
-  - caps + F1
- - Volume Down
-  - caps + F2
- - Volume Up
-  - caps + F3
+ - caps + 1 -> - Previous Song 
+ - caps + 2 -> Pause/Play 
+ - caps + 3 -> Next Song 
+ - caps + F1 -> Mute 
+ - caps + F2 -> Volume Down 
+ - caps + F3 -> Volume Up 
