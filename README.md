@@ -5,8 +5,8 @@ AutoHotKey script. ~Used in Windows 10~ (Moved to Arch with i3wm)
 - SetCapsLockState is AlwaysOff
 
 ## Windows Management and Explorer related tasks
- - alt + F4
- -- caps + q
+ * alt + F4
+ ** caps + q
  - ctrl + F4
  -- caps + w
  - windows always on top
