@@ -9,7 +9,7 @@ AutoHotKey script. ~Used in Windows 10~ (Moved to Arch with i3wm)
  * caps + w -> ctrl + F4
  * ctrl + shift + space -> windows always on top
  * caps + ] -> navigate to right desktop
- caps + [ -> navigate to left desktop
+ * caps + [ -> navigate to left desktop
  * ` -> move up a folder in Explorer
  * windows + c -> Open cmd on current Explorer folder
    
